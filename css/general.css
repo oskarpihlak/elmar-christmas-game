@@ -1,0 +1,228 @@
+@font-face {
+  font-family: roboto-condenced-bold;
+  src: url(../fonts/RobotoCondensed-Bold.ttf); }
+
+@font-face {
+  font-family: roboto-condenced-regular;
+  src: url(../fonts/RobotoCondensed-Regular.ttf); }
+
+.elmar-christmas-bg {
+  background-image: url("../img/bg.png");
+  height: 100%;
+  background-color: #cd0000;
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover; }
+
+.elmar-christmas-container {
+  margin: 0 5% 0 5%; }
+  @media (max-width: 768px) {
+    .elmar-christmas-container {
+      margin: 0; } }
+
+.elmar-christmas-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .elmar-christmas-heading-logo {
+    z-index: 10; }
+    @media (max-width: 768px) {
+      .elmar-christmas-heading-logo {
+        width: 40%; } }
+  .elmar-christmas-heading-title {
+    margin: 20px 0 -125px 0; }
+    @media (max-width: 768px) {
+      .elmar-christmas-heading-title {
+        width: 100%;
+        margin: 20px 0 0 0; } }
+  .elmar-christmas-heading-subtitle {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+    margin: auto;
+    color: #ffffff;
+    line-height: 1.7;
+    font-family: roboto-condenced-regular, sans-serif; }
+    @media (max-width: 768px) {
+      .elmar-christmas-heading-subtitle {
+        flex-direction: column; } }
+    .elmar-christmas-heading-subtitle-left {
+      font-family: roboto-condenced-regular, sans-serif;
+      text-align: right;
+      width: 500px;
+      padding: 0 100px 0 0; }
+      @media (max-width: 768px) {
+        .elmar-christmas-heading-subtitle-left {
+          text-align: left;
+          padding: 0 0 0 0;
+          width: 100%; } }
+      .elmar-christmas-heading-subtitle-left p {
+        margin: 0; }
+    .elmar-christmas-heading-subtitle-right {
+      font-family: roboto-condenced-regular, sans-serif;
+      padding: 0 35px 0 100px;
+      width: 500px; }
+      @media (max-width: 768px) {
+        .elmar-christmas-heading-subtitle-right {
+          text-align: left;
+          padding: 0 0 0 0;
+          width: 100%; } }
+      .elmar-christmas-heading-subtitle-right p {
+        margin: 0; }
+  .elmar-christmas-heading-slogan {
+    margin: -5% 0 0 0;
+    z-index: -1; }
+    @media (max-width: 768px) {
+      .elmar-christmas-heading-slogan {
+        width: 20%; } }
+
+.elmar-christmas-form {
+  position: relative;
+  background-color: white;
+  text-align: center;
+  margin: 100px 0 0 0;
+  z-index: 5; }
+  .elmar-christmas-form-footer-text {
+    margin: 5% 5% 5% 5%;
+    padding: 0 0 5% 0;
+    color: #888888;
+    line-height: 1.7; }
+  .elmar-christmas-form-sent-title {
+    color: #cd0000;
+    margin: 15px 0 0 0;
+    letter-spacing: -1px;
+    font-weight: bold;
+    font-family: roboto-condenced, sans-serif;
+    font-size: 1.3em; }
+  .elmar-christmas-form-sent-subtext {
+    font-family: roboto-condenced-regular, sans-serif; }
+  .elmar-christmas-form-submit {
+    width: 84%;
+    color: #ffffff;
+    background-color: #cd0000;
+    height: 35px;
+    margin: 10px;
+    border: 1px solid #000000;
+    font-size: 1.4em;
+    font-family: roboto-condenced-bold, sans-serif; }
+  .elmar-christmas-form-core {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap; }
+    .elmar-christmas-form-core-img {
+      width: 80%; }
+    .elmar-christmas-form-core-prize {
+      display: inline-block; }
+    .elmar-christmas-form-core-checkbox {
+      position: relative;
+      width: 90%;
+      text-align: left;
+      margin: 0 0 0 25px; }
+      .elmar-christmas-form-core-checkbox-confirm {
+        position: absolute;
+        margin: 5px 0 0 0; }
+      .elmar-christmas-form-core-checkbox-label {
+        font-weight: bold;
+        color: #cd0000;
+        font-family: roboto-condenced-bold, sans-serif; }
+      .elmar-christmas-form-core-checkbox-text {
+        margin: 0 0 0 20px;
+        font-family: roboto-condenced-regular, sans-serif; }
+    .elmar-christmas-form-core-input {
+      width: 80%;
+      margin: 10px 5px 10px 5px;
+      padding: 0 0 0 10px;
+      height: 30px;
+      background-color: #ebebeb;
+      border: 1px solid #2a0607; }
+    .elmar-christmas-form-core-fields {
+      width: 300px;
+      display: inline-block; }
+  .elmar-christmas-form-exit {
+    position: absolute;
+    top: 0;
+    right: 0; }
+    .elmar-christmas-form-exit-btn {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      cursor: pointer; }
+  .elmar-christmas-form-logo {
+    position: absolute;
+    top: -80px;
+    left: 50%;
+    transform: translateX(-50%); }
+  .elmar-christmas-form-title {
+    position: relative;
+    top: 60px;
+    font-family: "Zing Rust Demo Base", sans-serif;
+    font-size: 4em;
+    color: #000; }
+    @media (max-width: 520px) {
+      .elmar-christmas-form-title {
+        font-size: 3em; } }
+    @media (max-width: 320px) {
+      .elmar-christmas-form-title {
+        font-size: 2.5em; } }
+    .elmar-christmas-form-title-subtext {
+      text-align: left;
+      font-size: 17px;
+      line-height: 1.7;
+      font-family: sans-serif;
+      margin: 70px 5% 0 5%; }
+
+.christmas-gift {
+  position: relative;
+  display: inline-block;
+  align-items: center;
+  justify-items: center;
+  transition: 1000ms; }
+  .christmas-gift-element {
+    display: inline-block;
+    transition: 1000ms; }
+    .christmas-gift-element:hover {
+      animation: shake 0.5s;
+      animation-iteration-count: infinite;
+      transition: 1000ms; }
+    .christmas-gift-element-status-crossed, .christmas-gift-element-status-checked {
+      position: absolute;
+      width: 200px;
+      top: 0;
+      left: 0; }
+  .christmas-gift-container {
+    grid-column: 1/9;
+    grid-row: 2/8;
+    margin: 50px 0 0 0;
+    align-items: center;
+    justify-items: center;
+    position: relative;
+    text-align: center; }
+
+.hidden {
+  display: none; }
+
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg); }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg); }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg); }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg); }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg); }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg); }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg); }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg); }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg); }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg); }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg); } }
