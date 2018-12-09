@@ -8,7 +8,7 @@
   "description": "Elmari jõulupakkide loosi front-end.",
   "files": [
     "package.json",
-    "dist/",
+    "docs/",
     "modernizr-config.json",
     "README.md"
   ],
