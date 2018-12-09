@@ -89,14 +89,14 @@ gulp.task('copy', [
 ]);
 
 gulp.task('copy:.htaccess', () =>
-  gulp.src('node_modules/apache-server-configs/dist/.htaccess')
+  gulp.src('node_modules/apache-server-configs/docs/.htaccess')
     .pipe(plugins().replace(/# ErrorDocument/g, 'ErrorDocument'))
     .pipe(gulp.dest(dirs.dist))
 );
 
 gulp.task('copy:index.html', () => {
   const hash = ssri.fromData(
-    fs.readFileSync('node_modules/jquery/dist/jquery.min.js'),
+    fs.readFileSync('node_modules/jquery/docs/jquery.min.js'),
     {algorithms: ['sha256']}
   );
   let version = pkg.devDependencies.jquery;
@@ -110,7 +110,7 @@ gulp.task('copy:index.html', () => {
 });
 
 gulp.task('copy:jquery', () =>
-  gulp.src(['node_modules/jquery/dist/jquery.min.js'])
+  gulp.src(['node_modules/jquery/docs/jquery.min.js'])
     .pipe(plugins().rename(`jquery-${pkg.devDependencies.jquery}.min.js`))
     .pipe(gulp.dest(`${dirs.dist}/js/vendor`))
 );
