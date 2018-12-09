@@ -1,0 +1,324 @@
+@font-face {
+  font-family: roboto-condenced-bold;
+  src: url(../fonts/RobotoCondensed-Bold.ttf);
+}
+
+@font-face {
+  font-family: roboto-condenced-regular;
+  src: url(../fonts/RobotoCondensed-Regular.ttf);
+}
+
+.elmar {
+  &-christmas {
+    &-bg {
+      background-image: url("../img/bg.png");
+      height: 100%;
+      background-color: #cd0000;
+      background-position: center;
+      background-repeat: repeat;
+      background-size: cover;
+    }
+
+    &-container {
+      margin: 0 5% 0 5%;
+      @media (max-width: 768px) {
+        margin: 0;
+      }
+    }
+
+    &-heading {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &-logo {
+        z-index: 10;
+        @media (max-width: 768px) {
+          width: 40%;
+        }
+      }
+
+      &-title {
+        margin: 20px 0 -125px 0;
+        @media (max-width: 768px) {
+          width: 100%;
+          margin: 20px 0 0 0;
+        }
+      }
+
+      &-subtitle {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        padding: 40px;
+        margin: auto;
+        color: #ffffff;
+        line-height: 1.7;
+        font-family: roboto-condenced-regular, sans-serif;
+        @media (max-width: 768px) {
+          flex-direction: column;
+        }
+
+        &-left {
+          font-family: roboto-condenced-regular, sans-serif;
+          text-align: right;
+          width: 500px;
+          padding: 0 100px 0 0;
+          @media (max-width: 768px) {
+            text-align: left;
+            padding: 0 0 0 0;
+            width: 100%;
+          }
+
+          & p {
+            margin: 0;
+          }
+        }
+
+        &-right {
+          font-family: roboto-condenced-regular, sans-serif;
+          padding: 0 35px 0 100px;
+          width: 500px;
+          @media (max-width: 768px) {
+            text-align: left;
+            padding: 0 0 0 0;
+            width: 100%;
+          }
+
+          & p {
+            margin: 0;
+          }
+        }
+      }
+
+      &-slogan {
+        margin: -5% 0 0 0;
+        z-index: -1;
+        @media (max-width: 768px) {
+          width: 20%;
+        }
+      }
+    }
+
+    &-form {
+      position: relative;
+      background-color: white;
+      text-align: center;
+      margin: 100px 0 0 0;
+      z-index: 5;
+
+      &-footer {
+        &-text {
+          margin: 5% 5% 5% 5%;
+          padding: 0 0 5% 0;
+          color: #888888;
+          line-height: 1.7;
+        }
+      }
+
+      &-sent {
+        &-title {
+          color: #cd0000;
+          margin: 15px 0 0 0;
+          letter-spacing: -1px;
+          font-weight: bold;
+          font-family: roboto-condenced, sans-serif;
+          font-size: 1.3em;
+        }
+
+        &-subtext {
+          font-family: roboto-condenced-regular, sans-serif;
+
+        }
+      }
+
+      &-submit {
+        width: 84%;
+        color: #ffffff;
+        background-color: #cd0000;
+        height: 35px;
+        margin: 10px;
+        border: 1px solid #000000;
+        font-size: 1.4em;
+        font-family: roboto-condenced-bold, sans-serif;
+      }
+
+      &-core {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        &-img {
+          width: 80%;
+        }
+
+        &-prize {
+          display: inline-block;
+        }
+
+        &-checkbox {
+          position: relative;
+          width: 90%;
+          text-align: left;
+          margin: 0 0 0 25px;
+
+          &-confirm {
+            position: absolute;
+            margin: 5px 0 0 0;
+          }
+
+          &-label {
+            font-weight: bold;
+            color: #cd0000;
+            font-family: roboto-condenced-bold, sans-serif;
+          }
+
+          &-text {
+            margin: 0 0 0 20px;
+            font-family: roboto-condenced-regular, sans-serif;
+          }
+        }
+
+        &-input {
+          width: 80%;
+          margin: 10px 5px 10px 5px;
+          padding: 0 0 0 10px;
+          height: 30px;
+          background-color: #ebebeb;
+          border: 1px solid #2a0607;
+        }
+
+        &-fields {
+          width: 300px;
+          display: inline-block;
+        }
+      }
+
+
+
+      &-exit {
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        &-btn {
+          position: absolute;
+          top: 30px;
+          right: 30px;
+          cursor: pointer;
+        }
+      }
+
+      &-logo {
+        position: absolute;
+        top: -80px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      &-title {
+        position: relative;
+        top: 60px;
+        font-family: "Zing Rust Demo Base", sans-serif;
+        font-size: 4em;
+        @media (max-width: 520px) {
+          font-size: 3em;
+        }
+        @media (max-width: 320px) {
+          font-size: 2.5em;
+        }
+        color: #000;
+
+        &-subtext {
+          text-align: left;
+          font-size: 17px;
+          line-height: 1.7;
+          font-family: sans-serif;
+          margin: 70px 5% 0 5%;
+        }
+      }
+
+    }
+  }
+}
+
+.christmas {
+  &-gift {
+    position: relative;
+    display: inline-block;
+    align-items: center;
+    justify-items: center;
+    transition: 1000ms;
+
+    &-element {
+      display: inline-block;
+      transition: 1000ms;
+
+      &:hover {
+        animation: shake 0.5s;
+        animation-iteration-count: infinite;
+        transition: 1000ms;
+      }
+
+      &-status {
+        &-crossed, &-checked {
+          position: absolute;
+          width: 200px;
+          top: 0;
+          left: 0;
+        }
+      }
+    }
+
+    &-container {
+      grid-column: 1/9;
+      grid-row: 2/8;
+      margin: 50px 0 0 0;
+      align-items: center;
+      justify-items: center;
+      position: relative;
+      text-align: center;
+    }
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
