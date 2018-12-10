@@ -2,7 +2,8 @@
   "name": "elmar-joululoos",
   "scripts": {
     "build": "gulp build",
-    "test": "gulp archive && mocha --require babel-core/register --reporter spec --timeout 5000"
+    "test": "gulp archive && mocha --require babel-core/register --reporter spec --timeout 5000",
+    "deploy": "gh-pages -d dist"
   },
   "version": "1.1.0",
   "description": "Elmari jõulupakkide loosi front-end.",
@@ -12,6 +13,9 @@
     "modernizr-config.json",
     "README.md"
   ],
+  "dependencies": {
+    "gh-pages": "^2.0.1"
+  },
   "devDependencies": {
     "@alrra/travis-scripts": "^3.0.1",
     "apache-server-configs": "^3.0.0",

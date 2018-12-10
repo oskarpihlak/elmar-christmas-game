@@ -95,17 +95,7 @@ gulp.task('copy:.htaccess', () =>
 );
 
 gulp.task('copy:index.html', () => {
-  const hash = ssri.fromData(
-    fs.readFileSync('node_modules/jquery/docs/jquery.min.js'),
-    {algorithms: ['sha256']}
-  );
-  let version = pkg.devDependencies.jquery;
-  let modernizrVersion = pkg.devDependencies.modernizr;
-
   gulp.src(`${dirs.src}/index.html`)
-    .pipe(plugins().replace(/{{JQUERY_VERSION}}/g, version))
-    .pipe(plugins().replace(/{{MODERNIZR_VERSION}}/g, modernizrVersion))
-    .pipe(plugins().replace(/{{JQUERY_SRI_HASH}}/g, hash.toString()))
     .pipe(gulp.dest(dirs.dist));
 });
 
@@ -157,13 +147,6 @@ gulp.task('copy:normalize', () =>
     .pipe(gulp.dest(`${dirs.dist}/css`))
 );
 
-gulp.task('modernizr', (done) => {
-
-  modernizr.build(modernizrConfig, (code) => {
-    fs.writeFile(`${dirs.dist}/js/vendor/modernizr-${pkg.devDependencies.modernizr}.min.js`, code, done);
-  });
-
-});
 
 gulp.task('lint:js', () =>
   gulp.src([
@@ -212,8 +195,8 @@ gulp.task('archive', (done) => {
 
 gulp.task('build', (done) => {
   runSequence(
-    ['clean', 'lint:js'],
-    'copy', 'modernizr',
+    ['clean'],
+    'copy',
     done);
 });
 

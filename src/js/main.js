@@ -20,9 +20,9 @@ form.addEventListener('submit', e => {
     formData.append('timestamp', time);
     formData.append('winning_box', winningBox.toString());
     fetch(scriptURL, {method: 'POST', body: formData})
-      .then(response => {
-        document.querySelector(`.elmar-christmas-form-core`).style.flexDirection = 'column';
-        document.querySelector(`.elmar-christmas-form-core`).innerHTML = `
+      .then(() => {
+        document.querySelector('.elmar-christmas-form-core').style.flexDirection = 'column';
+        document.querySelector('.elmar-christmas-form-core').innerHTML = `
          <div>
             <img src="img/thumbs_up.png"/>
         </div>
@@ -30,13 +30,12 @@ form.addEventListener('submit', e => {
         <p class="elmar-christmas-form-sent-subtext">Now that we know who you are, I know who I am. I'm not a mistake! It all makes sense!</p>
       `;
       })
-      .catch(error => console.error('Error!', error.message));
+      .catch(() => {});
   } else {
     alert('Palun nõustuge kampaania tingimustega.');
     return false;
   }
 });
-
 
 function closeModal() {
   document.querySelector('.elmar-christmas-form').classList.add('hidden');
