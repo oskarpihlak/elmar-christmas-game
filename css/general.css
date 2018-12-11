@@ -6,6 +6,16 @@
   font-family: roboto-condenced-regular;
   src: url(../fonts/RobotoCondensed-Regular.ttf); }
 
+ol {
+  counter-reset: item; }
+
+li {
+  display: block; }
+
+li:before {
+  content: counters(item, ".") " ";
+  counter-increment: item; }
+
 .elmar-christmas-bg {
   background-image: url("../img/bg.png");
   height: 100%;
@@ -110,11 +120,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap; }
+    flex-wrap: wrap;
+    margin: 5px; }
     .elmar-christmas-form-core-img {
-      width: 80%; }
+      max-width: 100%;
+      max-height: 100%; }
     .elmar-christmas-form-core-prize {
-      display: inline-block; }
+      display: inline-block;
+      height: 500px; }
     .elmar-christmas-form-core-checkbox {
       position: relative;
       width: 90%;
@@ -148,13 +161,15 @@
       position: absolute;
       top: 30px;
       right: 30px;
-      cursor: pointer; }
+      cursor: pointer;
+      z-index: 30; }
   .elmar-christmas-form-logo {
     position: absolute;
     top: -80px;
     left: 50%;
     transform: translateX(-50%); }
   .elmar-christmas-form-title {
+    text-decoration: none;
     position: relative;
     top: 60px;
     font-family: "Zing Rust Demo Base", sans-serif;
@@ -166,8 +181,12 @@
     @media (max-width: 320px) {
       .elmar-christmas-form-title {
         font-size: 2.5em; } }
+    .elmar-christmas-form-title-link {
+      text-decoration: none; }
+      .elmar-christmas-form-title-link:hover {
+        color: #18acff; }
     .elmar-christmas-form-title-subtext {
-      text-align: left;
+      text-align: center;
       font-size: 17px;
       line-height: 1.7;
       font-family: sans-serif;
@@ -200,8 +219,50 @@
     position: relative;
     text-align: center; }
 
+.footer-text {
+  position: relative;
+  color: #fdfdfd;
+  font-family: roboto-condenced-regular, sans-serif;
+  max-width: 50%;
+  text-align: justify;
+  margin: 0 0 0 50%;
+  transform: translateX(-50%); }
+
 .hidden {
   display: none; }
+
+.scale-down {
+  object-fit: scale-down; }
+
+.terms-and-conditions {
+  position: relative;
+  margin: 0 5px 5px 50%;
+  transform: translateX(-50%);
+  width: 96%; }
+  .terms-and-conditions-container {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    background-color: #ffffff;
+    color: #000000;
+    z-index: 20;
+    border: 1px solid #000000;
+    padding: 5px; }
+  .terms-and-conditions-wrapper {
+    position: relative; }
+  .terms-and-conditions-title {
+    text-align: center; }
+    .terms-and-conditions-title-wrapper {
+      margin: 20px 5px 5px 50%;
+      transform: translateX(-50%);
+      max-width: 70%;
+      text-align: center; }
+  .terms-and-conditions-ref {
+    text-decoration: underline;
+    font-weight: bold;
+    cursor: pointer; }
 
 @keyframes shake {
   0% {
