@@ -65,10 +65,11 @@ li:before { content: counters(item, ".") " "; counter-increment: item }
         }
 
         &-left {
-          font-family: roboto-condenced-regular, sans-serif;
+          font-family: roboto-condenced-bold, sans-serif;
           text-align: right;
           width: 500px;
           padding: 0 100px 0 0;
+          font-size: 1.2em;
           @media (max-width: 768px) {
             text-align: left;
             padding: 0 0 0 0;
@@ -81,7 +82,8 @@ li:before { content: counters(item, ".") " "; counter-increment: item }
         }
 
         &-right {
-          font-family: roboto-condenced-regular, sans-serif;
+          font-family: roboto-condenced-bold, sans-serif;
+          font-size: 1.2em;
           padding: 0 35px 0 100px;
           width: 500px;
           @media (max-width: 768px) {
