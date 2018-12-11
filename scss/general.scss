@@ -305,7 +305,7 @@ li:before { content: counters(item, ".") " "; counter-increment: item }
     font-family: roboto-condenced-regular, sans-serif;
     max-width: 50%;
     text-align: justify;
-    margin: 0 0 0 50%;
+    margin: 0 0 50px 50%;
     transform: translateX(-50%);
   }
 }
