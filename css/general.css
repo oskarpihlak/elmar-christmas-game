@@ -93,8 +93,20 @@ li:before {
   text-align: center;
   margin: 100px 0 0 0;
   z-index: 5; }
+  .elmar-christmas-form-text-under-image {
+    margin: 0 0 0 50%;
+    transform: translateX(-50%);
+    width: 75%; }
+    @media (max-width: 1000px) {
+      .elmar-christmas-form-text-under-image {
+        width: 95%; } }
+    .elmar-christmas-form-text-under-image p {
+      text-align: justify;
+      font-size: 17px;
+      line-height: 1.7;
+      font-family: roboto-condenced-regular, sans-serif; }
   .elmar-christmas-form-footer-text {
-    margin: 5% 5% 5% 5%;
+    margin: 100px 5% 5% 5%;
     padding: 0 0 5% 0;
     color: #888888;
     line-height: 1.7; }
@@ -115,7 +127,8 @@ li:before {
     margin: 10px;
     border: 1px solid #000000;
     font-size: 1.4em;
-    font-family: roboto-condenced-bold, sans-serif; }
+    font-family: roboto-condenced-bold, sans-serif;
+    cursor: pointer; }
   .elmar-christmas-form-core {
     display: flex;
     align-items: center;
@@ -139,7 +152,13 @@ li:before {
       .elmar-christmas-form-core-checkbox-label {
         font-weight: bold;
         color: #cd0000;
-        font-family: roboto-condenced-bold, sans-serif; }
+        font-family: roboto-condenced-bold, sans-serif;
+        transition: 500ms;
+        text-decoration: underline; }
+        .elmar-christmas-form-core-checkbox-label:hover {
+          color: #600000;
+          font-size: 18px;
+          cursor: pointer; }
       .elmar-christmas-form-core-checkbox-text {
         margin: 0 0 0 20px;
         font-family: roboto-condenced-regular, sans-serif; }
@@ -186,7 +205,7 @@ li:before {
       .elmar-christmas-form-title-link:hover {
         color: #18acff; }
     .elmar-christmas-form-title-subtext {
-      text-align: center;
+      text-align: justify;
       font-size: 17px;
       line-height: 1.7;
       font-family: sans-serif;

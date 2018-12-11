@@ -111,10 +111,29 @@ li:before { content: counters(item, ".") " "; counter-increment: item }
       text-align: center;
       margin: 100px 0 0 0;
       z-index: 5;
+      &-text{
+        &-under{
+          &-image{
+            margin: 0 0 0 50%;
+            transform: translateX(-50%);
+            width: 75%;
+            @media (max-width: 1000px) {
+              width: 95%;
+            }
+
+            & p{
+              text-align: justify;
+              font-size: 17px;
+              line-height: 1.7;
+              font-family: roboto-condenced-regular, sans-serif;
+            }
+          }
+        }
+      }
 
       &-footer {
         &-text {
-          margin: 5% 5% 5% 5%;
+          margin: 100px 5% 5% 5%;
           padding: 0 0 5% 0;
           color: #888888;
           line-height: 1.7;
@@ -133,7 +152,6 @@ li:before { content: counters(item, ".") " "; counter-increment: item }
 
         &-subtext {
           font-family: roboto-condenced-regular, sans-serif;
-
         }
       }
 
@@ -146,6 +164,7 @@ li:before { content: counters(item, ".") " "; counter-increment: item }
         border: 1px solid #000000;
         font-size: 1.4em;
         font-family: roboto-condenced-bold, sans-serif;
+        cursor: pointer;
       }
 
       &-core {
@@ -180,6 +199,13 @@ li:before { content: counters(item, ".") " "; counter-increment: item }
             font-weight: bold;
             color: #cd0000;
             font-family: roboto-condenced-bold, sans-serif;
+            transition: 500ms;
+            text-decoration: underline;
+            &:hover{
+              color: #600000;
+              font-size: 18px;
+              cursor: pointer;
+            }
           }
 
           &-text {
@@ -247,7 +273,7 @@ li:before { content: counters(item, ".") " "; counter-increment: item }
         }
 
         &-subtext {
-          text-align: center;
+          text-align: justify;
           font-size: 17px;
           line-height: 1.7;
           font-family: sans-serif;
@@ -350,6 +376,7 @@ li:before { content: counters(item, ".") " "; counter-increment: item }
     cursor: pointer;
   }
 }
+
 
 @keyframes shake {
   0% {

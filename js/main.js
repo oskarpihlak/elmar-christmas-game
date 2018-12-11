@@ -1,5 +1,5 @@
 const scriptURL = 'https://script.google.com/macros/s/AKfycbywQgZReY5g2N19B_BTeuWPDGFjHmWoXovyUvWNV4elXMotgFAS/exec';
-let selectedBoxes = [];
+let selectedModalTitle = '';
 let modalOpen = false;
 
 Number.prototype.pad = function (n) {
@@ -46,7 +46,7 @@ const giftData = [
 ];
 const giftBoxes = giftData.map((data, index) => {
   return `
-    <div id="box-${index}" class="christmas-gift" onclick="openModal(${index})">
+    <div id="box-${index}" class="christmas-gift" onclick="openModal(${index}, '${data.title}')">
       <img class="christmas-gift-element" src="img/${Math.floor(Math.random() * (5 - 1 + 1)) + 1}.png">
     </div>
     <div id="gift-${index}" class="elmar-christmas-form hidden">
@@ -55,20 +55,21 @@ const giftBoxes = giftData.map((data, index) => {
     <img class="elmar-christmas-form-exit-btn" src="img/x.png" alt="cross-btn" onclick="closeModal(${index})">
     <a class="elmar-christmas-form-title-link" target="_blank" href="${data.titleUrl}"><b class="elmar-christmas-form-title">${data.title}</b></a>
     <div class="elmar-christmas-form-title-subtext">${data.subTitle}</div>
-    <div class="elmar-christmas-form-core">
+    <div class="elmar-christmas-form-core-${index}">
       <div class="elmar-christmas-form-core-prize">
         <img class="elmar-christmas-form-core-img scale-down" src="img/gifts/${data.image}" alt="">
       </div>
-      <form name="submit-to-google-sheet" id="person-form" class="elmar-christmas-form-core-fields">
+      <form name="submit-to-google-sheet" id="gift-form-${index}" class="elmar-christmas-form-core-fields">
         <input id="personName" class="elmar-christmas-form-core-input" placeholder="Nimi" name="name">
         <input id="personEmail" class="elmar-christmas-form-core-input" placeholder="e-post" name="email">
         <div class="elmar-christmas-form-core-checkbox">
-          <input id="validateAgreement" class="elmar-christmas-form-core-checkbox-confirm" type="checkbox" name="checkbox" id="checkbox_id">
-          <label class="elmar-christmas-form-core-checkbox-text" for="validateAgreement">Nõustun <span class="elmar-christmas-form-core-checkbox-label">kampaania tingimustega</span></label>
+          <input id='validateAgreement-${index}' class="elmar-christmas-form-core-checkbox-confirm" type="checkbox" name="checkbox" id="checkbox_id">
+          <label class="elmar-christmas-form-core-checkbox-text">Nõustun <span class="elmar-christmas-form-core-checkbox-label" onclick="openTermsAndConditions()">kampaania tingimustega</span></label>
         </div>
         <button type="submit" id="submit-form" class="elmar-christmas-form-submit">SAADA</button>
       </form>
     </div>
+    <div class="elmar-christmas-form-text-under-image"><p>${data.textUnderImage}</p></div>
     <div class="elmar-christmas-form-footer-text">
       Kampaaniat korraldab AS Eesti Meedia, registreeritud asukoht Tallinn, Maakri 23a, registrikood 10184643, e-post reklaam@eestimeedia.ee, telefon +3726662350. <span class="terms-and-conditions-ref" onclick="openTermsAndConditions()">Kampaania reegleid näed siit</span>
     </div>
@@ -77,35 +78,38 @@ const giftBoxes = giftData.map((data, index) => {
 });
 document.querySelector('.christmas-gift-container').innerHTML = giftBoxes;
 
+giftData.forEach((data, index)=>{
+  const form = document.querySelector(`#gift-form-${index}`);
 
-const form = document.forms['submit-to-google-sheet'];
-form.addEventListener('submit', e => {
-  e.preventDefault();
-  const hasAgreedToTerms = document.querySelector('#validateAgreement').checked;
-  if (hasAgreedToTerms) {
-    let formData = new FormData(form);
-    const moment = new Date;
-    const time = `${moment.getDate() + 1}.${moment.getMonth()}.${moment.getFullYear()} ${moment.getHours()}:${moment.getMinutes().pad(2)}`;
-    formData.append('timestamp', time);
-    formData.append('winning_box', winningBox.toString());
-    fetch(scriptURL, {method: 'POST', body: formData})
-      .then(() => {
-        document.querySelector('.elmar-christmas-form-core').style.flexDirection = 'column';
-        document.querySelector('.elmar-christmas-form-core').innerHTML = `
-         <div>
-            <img src="img/thumbs_up.png"/>
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const hasAgreedToTerms = document.querySelector('#validateAgreement-'+index).checked;
+    if (hasAgreedToTerms) {
+      let formData = new FormData(form);
+      const moment = new Date;
+      const time = `${moment.getDate() + 1}.${moment.getMonth()}.${moment.getFullYear()} ${moment.getHours()}:${moment.getMinutes().pad(2)}`;
+      formData.append('timestamp', time);
+      formData.append('prize', selectedModalTitle);
+      fetch(scriptURL, {method: 'POST', body: formData})
+        .then(() => {
+          document.querySelector(`.elmar-christmas-form-core-${index}`).style.flexDirection = 'column';
+          document.querySelector(`.elmar-christmas-form-core-${index}`).innerHTML = `
+         <div class="data-sent-img">
+            <img src="img/thumbs_up.png" alt="thumbs up"/>
         </div>
         <b class="elmar-christmas-form-sent-title">Sinu andmed on saadetud!</b>
-        <p class="elmar-christmas-form-sent-subtext">Now that we know who you are, I know who I am. I'm not a mistake! It all makes sense!</p>
+        <p class="elmar-christmas-form-sent-subtext"></p>
       `;
-      })
-      .catch(() => {
-      });
-  } else {
-    alert('Palun nõustuge kampaania tingimustega.');
-    return false;
-  }
+        })
+        .catch(() => {
+        });
+    } else {
+      alert('Palun nõustuge kampaania tingimustega.');
+    }
+  });
+
 });
+
 
 function closeModal(boxId) {
   modalOpen = false;
@@ -115,8 +119,9 @@ function closeModal(boxId) {
   document.querySelectorAll('.christmas-gift').forEach(element => element.classList.remove('hidden'))
 }
 
-function openModal(boxId) {
+function openModal(boxId, title) {
   if(!modalOpen) {
+    selectedModalTitle = title;
     modalOpen = true;
     document.querySelector(`#box-${boxId}`).innerHTML += `<img class="christmas-gift-element-status-checked" src="img/green-check.png" alt="d">`;
     setTimeout(() => {
