@@ -279,7 +279,9 @@ li:before { content: counters(item, ".") " "; counter-increment: item }
           font-size: 17px;
           line-height: 1.7;
           font-family: sans-serif;
-          margin: 70px 5% 0 5%;
+          margin: 70px 5% 0 50%;
+          transform: translateX(-50%);
+          width: 70%;
         }
       }
 

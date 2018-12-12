@@ -8,6 +8,7 @@ Number.prototype.pad = function (n) {
 
 const giftData = [
   {
+    id:0,
     title: 'Alkomeeter Alcoscan Secret',
     titleUrl: '//pood.alkomeeter.com/',
     subTitle: 'Turvalised sõidud tagab jõuluhinnaga Alcoscan Secret - vaata ruttu: alkomeeter.com',
@@ -15,6 +16,7 @@ const giftData = [
     textUnderImage: 'Rovico ettevõtted said alguse juba 1992.aastal.Tänaseks oleme kasvanud Eesti suurimaks alkomeetrite müüjaks ja hooldajaks ning ainsaks tootjaks. Iga 5.autojuht Eestis kasutab meie alkomeetrit, mis tõstab Eesti alkomeetri kasutuse populaarsuselt esikohale kogu maailmas.'
   },
   {
+    id:1,
     title: 'Roosa Kvarts küünlaalus',
     titleUrl: '//retreat4relief.com/',
     subTitle: 'Roosa Kvarts on ülim armastusekristall, mis kannab endaga kaasas tundeid ja suhteid tervendavat väge. Kristallküünlaalus aitab perekonda ja koju tuua armastuseõnne. Väeese, mis aitab pereliikmetel omavahel hästi läbi saada ja parandada suhteid igal erineval tasandil.',
@@ -22,6 +24,7 @@ const giftData = [
     textUnderImage: 'LA TENE on selgeltnägija Tene Laulu kristallipood ja portaal, kus leiad väga palju põnevat ning müstilist. Naturaalsed poolvääriskivid, viirukid, küünlad ja eeterlikud õlid on parimaks alternatiivteraapiaks sinu kehale ja hingele.'
   },
   {
+    id:2,
     title: '30€ Kaubamajaka kinkekaart',
     titleUrl: '//kaubamajakas.ee/',
     subTitle: 'Pärnu suurim ostukeskus Kaubamajakas on Pärnu lahe ääres asetsev kaubanduskeskus, kelle eesmärgiks on pakkuda lihtsat, kvaliteetset ja lõbusat poodlemiskogemust. \n' +
@@ -30,6 +33,7 @@ const giftData = [
     textUnderImage: 'Kaubamajakasse on lihtne ligi pääseda. Kauplemispind asub esimesel korrusel ning on samal tasapinnal, mis parkla. Oled ostukäru, suure perekonna või on Sul hoopis liikumisraskused, siis meie juures ei pea tundma muret pikkade treppide või keerukate koridoride pärast.'
   },
   {
+    id:3,
     title: '2 kasti Valge Klaar vahujooki',
     titleUrl: '//www.alecoq.ee/',
     subTitle: 'Valge Klaari vahujooki armastavad nii väikesed kui ka suured. Tuttava maitsega mullijook sisaldab 10% õunamahla ning teeb oma uues ja pidulikus kuues iga tähtpäeva meeldejäävaks ning magusaks.',
@@ -37,11 +41,36 @@ const giftData = [
     textUnderImage: 'A. Le Coq on Eesti vanim ja suurim joogitootja, kelle tootevalikust leiab 11 erinevat tootegruppi. Ettevõte seisab hea Eesti joogikultuuri säilimise ja arendamise eest, hoides au sees nii vanu joogitootmise traditsioone kui ka uuendades pidevalt oma tooteportfelli pakkumaks tarbijatele üha uusi ja tervislikke maitsekombinatsioone.'
   },
   {
+    id:4,
     title: 'Korralik jõululaud Kartulisalvelt',
     titleUrl: '//kartulisalv.ee/',
-    subTitle: 'Kartulisalv OÜ pakub kvaliteetset, kodumaist ning hoole ja armastusega kasvatatud talutoodangut Lõuna-Eesto põldudelt, juba alates aastast 2010.',
+    subTitle: 'Kartulisalv OÜ pakub kvaliteetset, kodumaist ning hoole ja armastusega kasvatatud talutoodangut Lõuna-Eesti põldudelt, juba alates aastast 2010.',
     image: 'kartulisadu.jpg',
     textUnderImage: 'Peamiselt tegeleme, meie koostööpartneri, Kartuliait OÜ toodangu edasimüügiga, aga lisaks näiteks mesi jõuab Teie lauale Tartumaalt Läänisetest - Soo talu mesitarudest ning küüslauk ja sibul tulevad otse meie enda Põlvamaa põldudelt.'
+  },
+  {
+    id:5,
+    title: 'Põnev meelelahutus MJ Productionsilt',
+    titleUrl: '//mjproduction.ee/',
+    subTitle: 'MJ Productions kingib 4 piletid "Alice Peeglitagusel maal" etendusele.',
+    image: 'mj.jpg',
+    textUnderImage: 'MJ Production korraldab ja viib läbi suur üritusi ja kontserte. Oleme Eestisse toonud kümneid maailmaklassiga artiste. Korraldatud on juba üle 1000 toimunud ürituse. MJ Production lisavaldkonnaks on muusikavideote tootmine, produtseerimine, erapidude korraldamine. Üritusi viime läbi nii eesti, vene, soome ja inglise keeles. MJ Production artistid on Vaido Neigaus ja ALISHA, Arturio.'
+  },
+  {
+    id:6,
+    title: 'SUVA 1919 pusa ja sokid',
+    titleUrl: '//suva.ee/',
+    subTitle: 'SUVA 1919 pusa ja sokid on SUVA 100 juubeli limiteeritud kollektsioon!',
+    image: 'suva.jpg',
+    textUnderImage: 'SUVA sokid on üle Eesti kättesaadavad <a target="_blank" href="//suva.ee/meie-poed/">hästi varustatud kauplustes, meie vabrikupoes</a> ja ka väga populaarseks saanud meie enda <a target="_blank" href="//www.suvashop.com/">e-poes.</a> Kleindid kiidavad meie sokkide kvaliteeti ja disaini. Neid viimaseid omadusi loeme ka oma eelisteks konkurentide ees.'
+  },
+  {
+    id:7,
+    title: 'Saunamaratoni pääse tervele tiimile (5 liiget)',
+    titleUrl: '//suva.ee/',
+    subTitle: '2. veebruaril 2019 kell 12.00 saab Otepää keskväljakult stardi X Euroopa Saunamaraton. Saunamaratoni finiš on sel aastal aga hoopis Kääriku Spordikeskuses, kuhu on aega saunalistel jõuda kuni kella 17:30-ni. Iga võistleja saab maratonile kohaselt ka finiši järgse sooja suppi. Kogu päevale paneb puid alla ja annab kuuma Leino Einer, kes sõidab ringi oma Helibussiga.',
+    image: 'saun.png',
+    textUnderImage: 'Euroopa Saunamaratoni kuldsponsor on Lemmik Mees OÜ, kes paneb peaauhinnaks välja järjekordse kvaliteetse ning väga mõnusa kümblustünni. I-III koht loositakse välja esimese kolmekümne parima seast, seega tasub pingutada. Ka saunamaomanikud saavad premeerida enda lemmikvõistkondasid ning muidugi saab rahvas taas valida oma lemmiksauna, mis saab rahalise autasu. Ei puudu ka eriauhinnad. Lisaks on rõõm tänada juba ette meie selleaastaseid suursponsoreid A.Le Coq\'i ja Leedu suurvürsti Vytautast. Meeleolu kütab kuumaks ametlik Talvepealinna raadio Sky Plus.'
   },
 ];
 const giftBoxes = giftData.map((data, index) => {
